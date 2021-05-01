@@ -8,7 +8,8 @@ export const authLogin = async (username, password) => {
       password,
     },
     withCredentials: true,
-    url: '/api/auth/login',
+
+    url: 'https://rocky-thicket-98577.herokuapp.com/auth/login',
   });
   return resTwo.data;
 };
