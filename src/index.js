@@ -13,7 +13,7 @@ import {
 } from '@apollo/client';
 
 const httpLink = createHttpLink({
-  uri: 'https://rocky-thicket-98577.herokuapp.com/graphql',
+  uri: '/api/graphql',
   credentials: 'include',
 });
 
