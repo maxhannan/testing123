@@ -5,28 +5,20 @@ axios.defaults.headers.common['User-Agent'] = 'PostmanRuntime/7.26.2';
 const Context = ({ children }) => {
   const [userObj, setUserObj] = useState();
 
-  const getUser = async () => {
 
-    axios
-      .get('https://rocky-thicket-98577.herokuapp.com/auth/getuser/', { 
-        withCredentials: true,
-
-      })
-      .then(res => {
-        if (res) {
-          console.log(res)
-          return res.data
-        }
-      }).catch((response) => console.log(response)); 
-  }
   useEffect(() => {
-    
-      const findUser = async () => {
-        const data = await getUser()
-        console.log(data)
-        setUserObj(data)
+    axios
+    .get('https://rocky-thicket-98577.herokuapp.com/auth/getuser/', { 
+      withCredentials: true,
+    })
+    .then(res => {
+      if (res) {
+        console.log("RESPONSE")
+        console.log(res)
+        console.log(res.data)
+        setUserObj(res.data)
       }
-      findUser()
+    })
   }, []);
   return <myContext.Provider value={userObj}>{children}</myContext.Provider>;
 };
