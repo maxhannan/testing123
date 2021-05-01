@@ -25,6 +25,12 @@ const Profile = ({ history }) => {
 
   if (posts) console.log(posts);
   const filteredPosts = posts.filter(post => post.username === username);
+  let userPhoto
+  if(filteredPosts.length > 0) {
+    userPhoto = filteredPosts[0].userPhoto
+  }else {
+    userPhoto = ''
+  }
   return (
     <>
       <ResponsiveMasonry
@@ -34,7 +40,7 @@ const Profile = ({ history }) => {
         <Masonry gutter="20px">
           <SocialProfileSimple
             username={username}
-            userPhoto={filteredPosts[0].userPhoto || ''}
+            userPhoto={userPhoto}
           />
           {filteredPosts.length > 0 && filteredPosts.map(post => (
             <PostCard key={post.id} post={post} />
