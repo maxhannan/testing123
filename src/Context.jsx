@@ -8,7 +8,7 @@ const Context = ({ children }) => {
 
   useEffect(() => {
     axios
-    .get('https://rocky-thicket-98577.herokuapp.com/auth/getuser/', { 
+    .get('/api/auth/getuser/', { 
       withCredentials: true,
     })
     .then(res => {
