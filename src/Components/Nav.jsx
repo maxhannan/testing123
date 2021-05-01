@@ -59,7 +59,7 @@ export default function Nav() {
 
   const logout = () => {
     axios
-      .get('https://rocky-thicket-98577.herokuapp.com/auth/logout', { withCredentials: true })
+      .get('/api/auth/logout', { withCredentials: true })
       .then(res => {
         if (res.data) {
           console.log(res);
