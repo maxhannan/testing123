@@ -34,7 +34,7 @@ const Profile = ({ history }) => {
         <Masonry gutter="20px">
           <SocialProfileSimple
             username={username}
-            userPhoto={filteredPosts[0].userPhoto}
+            userPhoto={filteredPosts[0].userPhoto || ''}
           />
           {filteredPosts.map(post => (
             <PostCard key={post.id} post={post} />
