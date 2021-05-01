@@ -8,7 +8,7 @@ const Context = ({ children }) => {
   const getUser = async () => {
 
     axios
-      .get('https://rocky-thicket-98577.herokuapp.com/auth/getuser/', { 
+      .get('/api/auth/getuser/', { 
         withCredentials: true,
 
       })
