@@ -36,7 +36,7 @@ const Profile = ({ history }) => {
             username={username}
             userPhoto={filteredPosts[0].userPhoto || ''}
           />
-          {filteredPosts.map(post => (
+          {filteredPosts.length > 0 && filteredPosts.map(post => (
             <PostCard key={post.id} post={post} />
           ))}
         </Masonry>
